@@ -22,7 +22,6 @@ func start(change_machine, damage_per_hit, total_hits, time_between_hits):
 	
 func stop():
 	emit_signal("stopped")
-	print("stopped")
 
 func _on_start_timer_timeout():
 	var quick_time_event = quick_time_event_template.instance()
@@ -35,8 +34,6 @@ func _on_start_timer_timeout():
 
 func finish_hit():
 	total_hits -= 1
-	print('total_hits')
-	print(total_hits)
 	if total_hits > 0:
 		$start_timer.start(self.time_between_hits)
 	else:

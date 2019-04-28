@@ -32,7 +32,6 @@ func stop():
 
 func _on_change_button_pressed():
 	change_machine.modify_money(person.money - int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value))
-	print((int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value) - person.money))
 	
 	if $CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value < person.money:
 		$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = false

@@ -11,12 +11,10 @@ func run(score):
 	pause_game()
 
 func pause_game():
-	print("pause_game")
 	get_tree().paused = true
 	visible = true
 
 func unpause_game():
-	print("unpause_game")
 	get_tree().paused = false
 	visible = false
 
