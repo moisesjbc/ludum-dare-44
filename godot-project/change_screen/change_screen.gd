@@ -58,7 +58,7 @@ func _on_reaction_timer_timeout():
 	if self.fight:
 		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client... IS PISSED OFF!"
 	else:
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client don't mind!"
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client doesn't mind!"
 		
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/continue_button.visible = true
 
