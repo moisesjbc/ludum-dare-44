@@ -7,11 +7,12 @@ signal money_changed
 var start_money : int = 500
 var money : int = 500
 
+func _ready():
+	emit_signal("money_changed", money)
 
 func start_currency_change(person):
 	person_charging_currency = person
 	emit_signal("currency_change_started", person, self)
-	emit_signal("money_changed", money)
 
 
 func _on_collider_body_entered(body):

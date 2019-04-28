@@ -18,7 +18,7 @@ func update_time(seconds_remaining):
 	$CenterContainer/VBoxContainer/timer_label.text = str(minutes) + ":" + str("%02d" % seconds)
 
 func update_money(money):
-	$CenterContainer/VBoxContainer/money_label.text = str("%010d" % money)
+	$CenterContainer/VBoxContainer/money_label.text = str("%05d" % money)
 
 func _on_timer_timeout():
 	seconds_remaining -= 1
