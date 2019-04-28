@@ -4,6 +4,14 @@ export (int) var direction = 1
 export (float) var speed = 200.0
 var walking : bool = true
 
+export (int) var max_money = 200
+export (int) var min_money = 50
+var money : int = 0
+
+
+func _ready():
+	money = (randi() % (max_money - min_money)) + min_money
+	print("I have " + str(money))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
