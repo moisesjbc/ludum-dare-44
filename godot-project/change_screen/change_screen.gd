@@ -17,20 +17,12 @@ func start(person, change_machine):
 	
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/label.text = "X wants to change " + str(person.money) + " €"
 	
-	if change_machine.money > person.money:
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.max_value = change_machine.money
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value = person.money
+	# Set the maximum value
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.max_value = person.money
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/max_money.text = str(person.money)
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value = person.money
 
-		#$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/input_money.text = str(person.money)
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/max_money.text = str(change_machine.money)
-	else:
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.max_value = change_machine.money
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value = change_machine.money
-		
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/input_money.text = ""
-		$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/max_money.text = str(change_machine.money)
-	
-	self._on_HSlider_value_changed($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value)
+	self._on_HSlider_value_changed(person.money)
 	visible = true
 
 
