@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
@@ -6,7 +6,6 @@
 [ext_resource path="res://change_machine/change_machine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://people_respawn/people_respawn.tscn" type="PackedScene" id=5]
 [ext_resource path="res://change_screen/change_screen.tscn" type="PackedScene" id=6]
-[ext_resource path="res://hit_quick_time_event/hit_quick_time_event.tscn" type="PackedScene" id=7]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -32,9 +31,6 @@ position = Vector2( 490.986, 348.573 )
 visible = false
 margin_right = 1024.0
 margin_bottom = 600.0
-
-[node name="hit_quick_time_event" parent="." instance=ExtResource( 7 )]
-position = Vector2( 508.855, 419.69 )
 
 [connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]
 [connection signal="currency_change_stopped" from="change_screen" to="change_machine" method="_on_change_screen_currency_change_stopped"]
