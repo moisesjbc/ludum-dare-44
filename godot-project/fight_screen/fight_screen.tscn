@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://fight_screen/fight_screen.gd" type="Script" id=1]
+[ext_resource path="res://hit_quick_time_event/hit_quick_time_event.tscn" type="PackedScene" id=2]
+
+[node name="fight_screen" type="Node2D"]
+script = ExtResource( 1 )
+quick_time_event_template = ExtResource( 2 )
+
+[node name="upper_left_corner" type="Position2D" parent="."]
+position = Vector2( 206.444, 109.637 )
+
+[node name="bottom_right_corner" type="Position2D" parent="."]
+position = Vector2( 742.966, 479.37 )
+
+[node name="start_timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="start_timer" to="." method="_on_start_timer_timeout"]
