@@ -14,7 +14,7 @@ func start(person, change_machine):
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.visible = false
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/continue_button.visible = false
 	
-	$CenterContainer/Panel/CenterContainer/VBoxContainer/label.text = "X wants to change " + str(person.money) + " €"
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/label.text = "X wants to cash a cheque for " + str(person.money) + " euros"
 	
 	# Set the maximum value
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.max_value = person.money
@@ -45,12 +45,8 @@ func _on_change_button_pressed():
 
 func _on_reaction_timer_timeout():
 	var pissed_off_meter : int = 100 - (($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value / person.money) * 100)
-	print("pissed_off_meter")
-	print(pissed_off_meter)
 	
 	var random = randi() % 100
-	print("random")
-	print(random)
 	
 	self.fight = (random <= pissed_off_meter)
 	
