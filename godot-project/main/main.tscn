@@ -40,6 +40,7 @@ margin_right = 1024.0
 margin_bottom = 600.0
 
 [node name="gui" parent="." instance=ExtResource( 8 )]
+seconds_remaining = 45
 
 [node name="game_over_menu2" parent="." instance=ExtResource( 4 )]
 margin_top = 0.0
