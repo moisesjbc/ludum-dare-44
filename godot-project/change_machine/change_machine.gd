@@ -30,6 +30,7 @@ func modify_money(delta_money : int):
 
 
 func _on_change_screen_currency_change_stopped(fight):
+	emit_signal('currency_change_finished')
 	if fight:
 		# start(money, damage_per_hit, total_hits, time_between_hits):
 		$fight_screen.start(self, randi() % 10 + 10, randi() % 5 + 2, 1.0)
@@ -37,14 +38,12 @@ func _on_change_screen_currency_change_stopped(fight):
 		$collider/CollisionShape2D.disabled = false
 		person_charging_currency.stop_currency_change()
 		person_charging_currency = null
-		emit_signal('currency_change_finished')
 
 
 func _on_fight_screen_stopped():
 	$collider/CollisionShape2D.disabled = false
 	person_charging_currency.stop_currency_change()
 	person_charging_currency = null
-	emit_signal('currency_change_finished')
 
 
 func _on_fight_screen_hit_received(money_lost : int):
