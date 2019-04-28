@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://change_machine/change_machine.tscn" type="PackedScene" id=4]
+[ext_resource path="res://people_respawn/people_respawn.tscn" type="PackedScene" id=5]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -21,4 +22,6 @@ visible = false
 
 [node name="change_machine" parent="." instance=ExtResource( 4 )]
 position = Vector2( 490.986, 348.573 )
+
+[node name="people_respawn" parent="." instance=ExtResource( 5 )]
 
