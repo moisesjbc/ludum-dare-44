@@ -2,6 +2,7 @@ extends Sprite
 
 var person_charging_currency : KinematicBody2D = null
 signal currency_change_started
+var start_money : int = 500
 var money : int = 500
 
 

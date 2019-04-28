@@ -24,7 +24,7 @@ visible = false
 visible = false
 
 [node name="change_machine" parent="." instance=ExtResource( 4 )]
-position = Vector2( 490.986, 348.573 )
+position = Vector2( 492.152, 348.573 )
 
 [node name="people_respawn" parent="." instance=ExtResource( 5 )]
 
@@ -35,5 +35,12 @@ margin_bottom = 600.0
 
 [node name="gui" parent="." instance=ExtResource( 7 )]
 
+[node name="game_over_menu2" parent="." instance=ExtResource( 3 )]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 1024, 600 )
+
 [connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]
 [connection signal="currency_change_stopped" from="change_screen" to="change_machine" method="_on_change_screen_currency_change_stopped"]
+[connection signal="time_finished" from="gui" to="." method="_on_gui_time_finished"]
