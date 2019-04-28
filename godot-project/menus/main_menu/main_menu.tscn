@@ -91,7 +91,7 @@ margin_right = 500.0
 margin_bottom = 336.0
 custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "Made in ~12 HOURS for Ludum Dare #44
+text = "Made in ~13 HOURS for Ludum Dare #44
 Theme: Your life is currency"
 align = 1
 
