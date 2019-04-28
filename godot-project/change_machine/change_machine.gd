@@ -42,8 +42,9 @@ func _on_change_screen_currency_change_stopped(fight):
 
 func _on_fight_screen_stopped():
 	$collider/CollisionShape2D.disabled = false
-	person_charging_currency.stop_currency_change()
-	person_charging_currency = null
+	if person_charging_currency:
+		person_charging_currency.stop_currency_change()
+		person_charging_currency = null
 
 
 func _on_fight_screen_hit_received(money_lost : int):

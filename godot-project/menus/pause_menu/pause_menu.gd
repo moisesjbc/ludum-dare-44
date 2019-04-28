@@ -1,6 +1,10 @@
 extends CenterContainer
 
 
+func _ready():
+	visible = false
+
+
 func run(score):
 	$panel/margin/layout/score.text = "Score (money earned): " + str(score) + " euros"
 	get_tree().call_group("people", "destroy")
