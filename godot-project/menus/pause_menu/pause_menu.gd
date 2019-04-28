@@ -21,10 +21,14 @@ func unpause_game():
 	visible = false
 
 func _on_return_button_pressed():
+	get_tree().call_group("people", "destroy")
 	unpause_game()
-	print('Changing scene!')
 	get_tree().change_scene("res://menus/main_menu/main_menu.tscn")
 
 func _on_restart_button_pressed():
 	unpause_game()
 	get_tree().change_scene("res://main/main.tscn")
+
+
+func _on_resume_button_pressed():
+	unpause_game()
