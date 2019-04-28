@@ -20,4 +20,5 @@ func _on_VisibilityEnabler2D_screen_exited():
 
 func decide_if_change_currency():
 	print("Gonna change")
+	walking = false
 	return true
