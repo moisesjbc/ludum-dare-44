@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://change_machine/change_machine.gd" type="Script" id=1]
-[ext_resource path="res://hit_quick_time_event/godot.png" type="Texture" id=2]
+[ext_resource path="res://change_machine/change_machine.png" type="Texture" id=2]
 [ext_resource path="res://fight_screen/fight_screen.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -11,9 +11,8 @@ extents = Vector2( 62.9042, 31.0589 )
 z_index = -1
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="Sprite" parent="."]
+[node name="sprite" type="Sprite" parent="."]
 position = Vector2( 48.2933, 116.992 )
-scale = Vector2( 0.154301, 0.387832 )
 texture = ExtResource( 2 )
 
 [node name="collider" type="Area2D" parent="."]
