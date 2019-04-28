@@ -43,6 +43,7 @@ func finish_hit():
 		stop()
 
 func _on_quick_time_event_failed():
+	$hit_sound.play(0.75)
 	emit_signal('hit_received', self.damage_per_hit)
 	finish_hit()
 	

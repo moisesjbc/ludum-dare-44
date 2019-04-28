@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/meh.ogg-0addac6e2097684fcff3c0360d005037.oggstr"
+
+[deps]
+
+source_file="res://change_screen/meh.ogg"
+dest_files=[ "res://.import/meh.ogg-0addac6e2097684fcff3c0360d005037.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

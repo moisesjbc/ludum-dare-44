@@ -8,7 +8,6 @@ var fight : bool = false
 func start(person, change_machine):
 	self.person = person
 	self.change_machine = change_machine
-	#self.change_machine.money += person.money
 	self.fight = false
 	
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = true
@@ -56,8 +55,10 @@ func _on_reaction_timer_timeout():
 	self.fight = (random <= pissed_off_meter)
 	
 	if self.fight:
+		$grunt_sound.play(0.75)
 		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client... IS PISSED OFF!"
 	else:
+		$meh_sound.play(0.75)
 		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client doesn't mind!"
 		
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/continue_button.visible = true
