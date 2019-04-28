@@ -8,7 +8,7 @@ var fight : bool = false
 func start(person, change_machine):
 	self.person = person
 	self.change_machine = change_machine
-	self.change_machine.money += person.money
+	#self.change_machine.money += person.money
 	self.fight = false
 	
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = true
@@ -21,7 +21,7 @@ func start(person, change_machine):
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.max_value = person.money
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/HBoxContainer/max_money.text = str(person.money)
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value = person.money
-
+	
 	self._on_HSlider_value_changed(person.money)
 	visible = true
 
@@ -32,7 +32,8 @@ func stop():
 
 
 func _on_change_button_pressed():
-	change_machine.money -= int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value)
+	change_machine.modify_money(person.money - int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value))
+	print((int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value) - person.money))
 	
 	if $CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value < person.money:
 		$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = false

@@ -25,3 +25,7 @@ func _on_timer_timeout():
 	update_time(seconds_remaining)
 	if seconds_remaining == 0:
 		emit_signal("time_finished")
+
+
+func _on_change_machine_money_changed(money):
+	update_money(money)

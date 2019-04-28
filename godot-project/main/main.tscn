@@ -43,5 +43,6 @@ rect_min_size = Vector2( 1024, 600 )
 
 [connection signal="currency_change_finished" from="change_machine" to="." method="_on_change_machine_currency_change_finished"]
 [connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]
+[connection signal="money_changed" from="change_machine" to="gui" method="_on_change_machine_money_changed"]
 [connection signal="currency_change_stopped" from="change_screen" to="change_machine" method="_on_change_screen_currency_change_stopped"]
 [connection signal="time_finished" from="gui" to="." method="_on_gui_time_finished"]

@@ -3,6 +3,7 @@ extends Sprite
 var person_charging_currency : KinematicBody2D = null
 signal currency_change_started
 signal currency_change_finished
+signal money_changed
 var start_money : int = 500
 var money : int = 500
 
@@ -10,6 +11,7 @@ var money : int = 500
 func start_currency_change(person):
 	person_charging_currency = person
 	emit_signal("currency_change_started", person, self)
+	emit_signal("money_changed", money)
 
 
 func _on_collider_body_entered(body):
@@ -17,6 +19,10 @@ func _on_collider_body_entered(body):
 		if body.decide_if_change_currency():
 			start_currency_change(body)
 			
+func modify_money(delta_money : int):
+	money += delta_money
+	emit_signal("money_changed", money)
+	
 
 func _on_change_screen_currency_change_stopped(fight):
 	if fight:
