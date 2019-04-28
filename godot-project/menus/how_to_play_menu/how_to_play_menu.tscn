@@ -15,14 +15,14 @@ margin_right = 1030.11
 margin_bottom = 602.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 11.0
-margin_top = 104.0
-margin_right = 1016.0
-margin_bottom = 497.0
+margin_left = 89.0
+margin_top = 93.0
+margin_right = 1059.0
+margin_bottom = 508.0
 custom_constants/separation = 15
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_right = 1005.0
+margin_right = 970.0
 margin_bottom = 19.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0.519531, 0.202942, 1 )
@@ -31,7 +31,7 @@ align = 1
 
 [node name="about_title" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 34.0
-margin_right = 1005.0
+margin_right = 970.0
 margin_bottom = 53.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
@@ -40,44 +40,45 @@ align = 1
 
 [node name="about_text" type="Label" parent="CenterContainer/VBoxContainer"]
 margin_top = 68.0
-margin_right = 1005.0
-margin_bottom = 219.0
+margin_right = 970.0
+margin_bottom = 241.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "You are a exchange machine with a greedy IA which doesn't hesitate to steal money from its users!
+text = "You are an ATM with a greedy IA which doesn't hesitate to steal money from its users!
 
-Multiple people will use you to exchange currency. Every time an user uses you you will decide how much money return to him / her,
-and maybe you can return less than you received...
+Multiple people will use you to extract  currency from their accounts.
+Every time an user uses you you will decide how much money return to him / her,
+and maybe you can return less than you were asked for...
 
 But be careful! Not all users will simply walk away and will try to punch you in order to get his / her money back. In those cases
 you will have to defend yourself and your booty!"
 align = 1
 
 [node name="controls_title" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 234.0
-margin_right = 1005.0
-margin_bottom = 253.0
+margin_top = 256.0
+margin_right = 970.0
+margin_bottom = 275.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.164642, 0.557726, 0.648438, 1 )
 text = "Controls"
 align = 1
 
 [node name="controls_text" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 268.0
-margin_right = 1005.0
-margin_bottom = 353.0
+margin_top = 290.0
+margin_right = 970.0
+margin_bottom = 375.0
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0, 0, 0, 1 )
-text = "a) Exchange fase
+text = "a) Dialogue fase
 Mouse - Select and confirm return value
 b) Defense fase
 Mouse - Click on exclamation marks the fastest you can in order to defend from that hit"
 align = 1
 
 [node name="return_to_main_menu_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 368.0
-margin_right = 1005.0
-margin_bottom = 393.0
+margin_top = 390.0
+margin_right = 970.0
+margin_bottom = 415.0
 size_flags_vertical = 2
 custom_fonts/font = SubResource( 1 )
 text = "Return to main menu"
