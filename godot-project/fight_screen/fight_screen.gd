@@ -6,15 +6,14 @@ var hit_time : float = 1
 var time_between_hits : float = 1
 var damage_per_hit : int = 20
 var money : int
+var change_machine = null
 
 signal stopped
 
-func _ready():
-	start(400, 20, 3, 1.0)
-
-func start(money, damage_per_hit, total_hits, time_between_hits):
+func start(change_machine, damage_per_hit, total_hits, time_between_hits):
 	visible = true
-	self.money = money
+	self.change_machine = change_machine
+	self.money = change_machine.money
 	self.damage_per_hit = damage_per_hit
 	self.total_hits = total_hits
 	self.time_between_hits = time_between_hits

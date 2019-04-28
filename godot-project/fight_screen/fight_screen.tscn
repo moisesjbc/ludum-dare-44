@@ -8,10 +8,10 @@ script = ExtResource( 1 )
 quick_time_event_template = ExtResource( 2 )
 
 [node name="upper_left_corner" type="Position2D" parent="."]
-position = Vector2( 206.444, 109.637 )
+position = Vector2( 30.3251, 39.6559 )
 
 [node name="bottom_right_corner" type="Position2D" parent="."]
-position = Vector2( 742.966, 479.37 )
+position = Vector2( 64.1494, 160.956 )
 
 [node name="start_timer" type="Timer" parent="."]
 one_shot = true

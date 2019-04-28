@@ -3,7 +3,7 @@
 [ext_resource path="res://person/person.gd" type="Script" id=1]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 20.2996, 52.0567 )
+extents = Vector2( 20.2996, 17.8439 )
 
 [node name="person" type="KinematicBody2D"]
 position = Vector2( 0, -5.41498 )
@@ -22,7 +22,7 @@ position = Vector2( 1.45862, -50.9824 )
 scale = Vector2( 2.3413, 5.49045 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0.57869, -46.7505 )
+position = Vector2( 0.57869, 31.7672 )
 shape = SubResource( 1 )
 
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]

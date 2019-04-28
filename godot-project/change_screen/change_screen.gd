@@ -3,11 +3,17 @@ extends Control
 signal currency_change_stopped
 var person = null
 var change_machine = null
+var fight : bool = false
 
 func start(person, change_machine):
 	self.person = person
 	self.change_machine = change_machine
 	self.change_machine.money += person.money
+	self.fight = false
+	
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = true
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.visible = false
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/continue_button.visible = false
 	
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/label.text = "X wants to change " + str(person.money) + " €"
 	
@@ -29,13 +35,39 @@ func start(person, change_machine):
 
 
 func stop():
-	emit_signal("currency_change_stopped")
-	change_machine.money -= int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value)
+	emit_signal("currency_change_stopped", self.fight)
 	visible = false
 
 
 func _on_change_button_pressed():
-	stop()
+	change_machine.money -= int($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value)
+	
+	if $CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value < person.money:
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/change_button.visible = false
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.visible = true
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client..."
+		$reaction_timer.start(1.0)
+	else:
+		stop()
+
+
+func _on_reaction_timer_timeout():
+	var pissed_off_meter : int = 100 - (($CenterContainer/Panel/CenterContainer/VBoxContainer/HSlider.value / person.money) * 100)
+	print("pissed_off_meter")
+	print(pissed_off_meter)
+	
+	var random = randi() % 100
+	print("random")
+	print(random)
+	
+	self.fight = (random <= pissed_off_meter)
+	
+	if self.fight:
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client... IS PISSED OFF!"
+	else:
+		$CenterContainer/Panel/CenterContainer/VBoxContainer/reaction_label.text = "Your client don't mind!"
+		
+	$CenterContainer/Panel/CenterContainer/VBoxContainer/continue_button.visible = true
 
 
 func _on_HSlider_value_changed(value):
@@ -47,3 +79,7 @@ func _on_HSlider_value_changed(value):
 		help_text = "You are stealing " + str(-(value - person.money)) + " euros from the client!"
 
 	$CenterContainer/Panel/CenterContainer/VBoxContainer/result_label.text = return_text + " (" + help_text + ")"
+
+
+func _on_continue_button_pressed():
+	stop()

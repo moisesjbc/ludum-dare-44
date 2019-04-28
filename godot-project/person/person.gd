@@ -11,7 +11,6 @@ var money : int = 0
 
 func _ready():
 	money = (randi() % (max_money - min_money)) + min_money
-	print("I have " + str(money))
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -22,14 +21,15 @@ func _process(delta):
 
 
 func _on_VisibilityEnabler2D_screen_exited():
-	print("Delete person!")
 	queue_free()
 
 
 func decide_if_change_currency():
-	print("Gonna change")
 	walking = false
 	return true
 
 func stop_currency_change():
 	walking = true
+	
+	# Prevent this person from changing again
+	$CollisionShape2D.disabled = true
