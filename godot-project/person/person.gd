@@ -22,3 +22,6 @@ func decide_if_change_currency():
 	print("Gonna change")
 	walking = false
 	return true
+
+func stop_currency_change():
+	walking = true

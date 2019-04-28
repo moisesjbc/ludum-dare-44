@@ -1,13 +1,15 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=2]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=3]
 [ext_resource path="res://change_machine/change_machine.tscn" type="PackedScene" id=4]
 [ext_resource path="res://people_respawn/people_respawn.tscn" type="PackedScene" id=5]
+[ext_resource path="res://change_screen/change_screen.tscn" type="PackedScene" id=6]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
+currency_change_screen_path = NodePath("change_screen")
 
 [node name="dummy_label" type="Label" parent="."]
 margin_right = 40.0
@@ -25,3 +27,10 @@ position = Vector2( 490.986, 348.573 )
 
 [node name="people_respawn" parent="." instance=ExtResource( 5 )]
 
+[node name="change_screen" parent="." instance=ExtResource( 6 )]
+visible = false
+margin_right = 1024.0
+margin_bottom = 600.0
+
+[connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]
+[connection signal="currency_change_stopped" from="change_screen" to="change_machine" method="_on_change_screen_currency_change_stopped"]
