@@ -33,3 +33,6 @@ func stop_currency_change():
 	
 	# Prevent this person from changing again
 	$CollisionShape2D.disabled = true
+	
+func destroy():
+	queue_free()

@@ -15,7 +15,9 @@ script = ExtResource( 1 )
 position = Vector2( 1.07545, -79.6157 )
 texture = ExtResource( 2 )
 
-[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="."]
+[node name="VisibilityEnabler2D" type="VisibilityEnabler2D" parent="." groups=[
+"people",
+]]
 position = Vector2( 0.37787, -82.2351 )
 scale = Vector2( 2.3413, 8.16524 )
 

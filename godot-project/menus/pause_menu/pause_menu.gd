@@ -3,6 +3,7 @@ extends CenterContainer
 
 func run(score):
 	$panel/margin/layout/score.text = "Score (money earned): " + str(score) + " euros"
+	get_tree().call_group("people", "destroy")
 	pause_game()
 
 func pause_game():

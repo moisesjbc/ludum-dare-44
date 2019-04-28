@@ -15,4 +15,5 @@ func _on_respawn_timer_timeout():
 		person.position = $right_respawn_point.position
 		person.direction = -1
 		
+	person.add_to_group("people")
 	get_tree().get_root().add_child(person)
