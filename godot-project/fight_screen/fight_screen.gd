@@ -9,6 +9,7 @@ var money : int
 var change_machine = null
 
 signal stopped
+signal hit_received
 
 func start(change_machine, damage_per_hit, total_hits, time_between_hits):
 	visible = true
@@ -42,6 +43,7 @@ func finish_hit():
 		stop()
 
 func _on_quick_time_event_failed():
+	emit_signal('hit_received', self.damage_per_hit)
 	finish_hit()
 	
 func _on_quick_time_event_succeeded():

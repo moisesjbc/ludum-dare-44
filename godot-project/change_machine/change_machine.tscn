@@ -26,4 +26,5 @@ shape = SubResource( 1 )
 visible = false
 
 [connection signal="body_entered" from="collider" to="." method="_on_collider_body_entered"]
+[connection signal="hit_received" from="fight_screen" to="." method="_on_fight_screen_hit_received"]
 [connection signal="stopped" from="fight_screen" to="." method="_on_fight_screen_stopped"]

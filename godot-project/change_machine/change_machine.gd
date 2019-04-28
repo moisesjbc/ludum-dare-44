@@ -18,11 +18,15 @@ func _on_collider_body_entered(body):
 	if person_charging_currency == null:
 		if body.decide_if_change_currency():
 			start_currency_change(body)
-			
+
+
 func modify_money(delta_money : int):
 	money += delta_money
+	if money < 0:
+		money = 0
 	emit_signal("money_changed", money)
 	
+
 
 func _on_change_screen_currency_change_stopped(fight):
 	if fight:
@@ -40,3 +44,7 @@ func _on_fight_screen_stopped():
 	person_charging_currency.stop_currency_change()
 	person_charging_currency = null
 	emit_signal('currency_change_finished')
+
+
+func _on_fight_screen_hit_received(money_lost : int):
+	modify_money(-money_lost)
