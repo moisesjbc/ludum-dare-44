@@ -1,68 +1,97 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://menus/main_menu/main_menu.gd" type="Script" id=1]
+[ext_resource path="res://fonts/Ubuntu-B.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://fonts/Ubuntu-B.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 40
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFont" id=5]
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://fonts/Ubuntu-B.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 18
+font_data = SubResource( 3 )
 
 [node name="main_menu" type="CanvasLayer"]
 script = ExtResource( 1 )
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
-margin_right = 1025.0
-margin_bottom = 602.0
+margin_left = -2.10529
+margin_top = -1.05263
+margin_right = 1022.89
+margin_bottom = 600.947
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
-margin_left = 262.0
-margin_top = 177.0
-margin_right = 762.0
-margin_bottom = 425.0
+margin_left = 261.0
+margin_top = 133.0
+margin_right = 763.0
+margin_bottom = 469.0
 custom_constants/separation = 20
 
 [node name="HBoxContainer" type="CenterContainer" parent="CenterContainer/VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 14.0
+margin_right = 502.0
+margin_bottom = 46.0
 
 [node name="title" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
-margin_left = 212.0
-margin_right = 287.0
-margin_bottom = 14.0
-text = "GAME TITLE"
+margin_right = 502.0
+margin_bottom = 46.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "THE EXCHANGE MACHINE"
 align = 1
 
 [node name="start_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 34.0
-margin_right = 500.0
-margin_bottom = 54.0
+margin_top = 66.0
+margin_right = 502.0
+margin_bottom = 91.0
 rect_min_size = Vector2( 500, 0 )
+custom_fonts/font = SubResource( 5 )
 text = "Start game"
 
 [node name="how_to_play_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 74.0
-margin_right = 500.0
-margin_bottom = 94.0
+margin_top = 111.0
+margin_right = 502.0
+margin_bottom = 136.0
+custom_fonts/font = SubResource( 5 )
 text = "How to play"
 
 [node name="credits_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 114.0
-margin_right = 500.0
-margin_bottom = 134.0
+margin_top = 156.0
+margin_right = 502.0
+margin_bottom = 181.0
+custom_fonts/font = SubResource( 5 )
 text = "Credits"
 
 [node name="toggle_sound_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 154.0
-margin_right = 500.0
-margin_bottom = 174.0
+margin_top = 201.0
+margin_right = 502.0
+margin_bottom = 226.0
+custom_fonts/font = SubResource( 5 )
 text = "Sound mode"
 
 [node name="exit_game_button" type="Button" parent="CenterContainer/VBoxContainer"]
-margin_top = 194.0
-margin_right = 500.0
-margin_bottom = 214.0
+margin_top = 246.0
+margin_right = 502.0
+margin_bottom = 271.0
+custom_fonts/font = SubResource( 5 )
 text = "Exit game"
 
 [node name="ludum_dare_label" type="Label" parent="CenterContainer/VBoxContainer"]
-margin_top = 234.0
-margin_right = 500.0
-margin_bottom = 248.0
-text = "Made for ..."
+margin_top = 291.0
+margin_right = 502.0
+margin_bottom = 336.0
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Made in ~12 HOURS for Ludum Dare #44
+Theme: Your life is currency"
 align = 1
 
 [connection signal="pressed" from="CenterContainer/VBoxContainer/start_game_button" to="." method="_on_start_game_button_pressed"]

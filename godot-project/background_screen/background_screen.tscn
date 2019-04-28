@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://background_screen/background.png" type="Texture" id=1]
+
+[node name="background_screen" type="Sprite"]
+position = Vector2( 512.631, 301.053 )
+z_index = -1
+texture = ExtResource( 1 )
+
