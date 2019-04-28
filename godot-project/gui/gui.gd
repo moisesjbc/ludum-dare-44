@@ -5,7 +5,12 @@ signal time_finished
 
 func _ready():
 	update_time(seconds_remaining)
-
+	
+func pause_timer():
+	$timer.paused = true
+	
+func resume_timer():
+	$timer.paused = false
 
 func update_time(seconds_remaining):
 	var minutes = seconds_remaining / 60

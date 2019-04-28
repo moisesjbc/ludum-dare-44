@@ -2,6 +2,7 @@ extends Sprite
 
 var person_charging_currency : KinematicBody2D = null
 signal currency_change_started
+signal currency_change_finished
 var start_money : int = 500
 var money : int = 500
 
@@ -25,9 +26,11 @@ func _on_change_screen_currency_change_stopped(fight):
 		$collider/CollisionShape2D.disabled = false
 		person_charging_currency.stop_currency_change()
 		person_charging_currency = null
+		emit_signal('currency_change_finished')
 
 
 func _on_fight_screen_stopped():
 	$collider/CollisionShape2D.disabled = false
 	person_charging_currency.stop_currency_change()
 	person_charging_currency = null
+	emit_signal('currency_change_finished')

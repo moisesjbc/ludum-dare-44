@@ -8,6 +8,7 @@ func _process(delta):
 
 
 func _on_change_machine_currency_change_started(person, change_machine):
+	$gui.pause_timer()
 	$change_screen.start(person, change_machine)
 
 
@@ -17,3 +18,7 @@ func _on_gui_time_finished():
 		 current_money -= $change_machine.person_charging_currency.money
 	$change_screen.visible = false
 	$game_over_menu.run(current_money - $change_machine.start_money)
+
+
+func _on_change_machine_currency_change_finished():
+	$gui.resume_timer()
