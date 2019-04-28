@@ -10,6 +10,7 @@ var money : int = 0
 
 
 func _ready():
+	randomize()
 	money = (randi() % (max_money - min_money)) + min_money
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
