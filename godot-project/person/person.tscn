@@ -26,3 +26,4 @@ position = Vector2( 0.57869, 31.7672 )
 shape = SubResource( 1 )
 
 [connection signal="screen_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_screen_exited"]
+[connection signal="viewport_exited" from="VisibilityEnabler2D" to="." method="_on_VisibilityEnabler2D_viewport_exited"]

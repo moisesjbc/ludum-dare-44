@@ -27,18 +27,30 @@ position = Vector2( 492.152, 348.573 )
 
 [node name="gui" parent="gui" instance=ExtResource( 5 )]
 pause_mode = 1
-margin_bottom = -538.0
+anchor_bottom = 0.0
+margin_bottom = 62.0
 seconds_remaining = 45
 
 [node name="change_screen" parent="gui" instance=ExtResource( 6 )]
 pause_mode = 1
 visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 600.0
 
 [node name="game_over_menu" parent="gui" instance=ExtResource( 7 )]
-visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 1024.0
+margin_bottom = 603.085
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [node name="pause_menu" parent="gui" instance=ExtResource( 8 )]
 visible = false
+size_flags_horizontal = 2
+size_flags_vertical = 2
 
 [connection signal="currency_change_finished" from="change_machine" to="." method="_on_change_machine_currency_change_finished"]
 [connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]

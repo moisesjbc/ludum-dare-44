@@ -21,10 +21,6 @@ func _process(delta):
 		move_and_collide(velocity)
 
 
-func _on_VisibilityEnabler2D_screen_exited():
-	queue_free()
-
-
 func decide_if_change_currency():
 	walking = false
 	return true
@@ -36,4 +32,8 @@ func stop_currency_change():
 	$CollisionShape2D.disabled = true
 	
 func destroy():
+	queue_free()
+
+func _on_VisibilityEnabler2D_viewport_exited(viewport):
+	print('Viewport')
 	queue_free()
