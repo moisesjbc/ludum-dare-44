@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://main/people_destroy_area.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 14.3899, 359.281 )
+
+[node name="people_destroy_area_right" type="Area2D"]
+position = Vector2( 1467.84, -1.36035 )
+script = ExtResource( 1 )
+destroy_people_moving_left = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -221.741, 518.302 )
+scale = Vector2( 15.1079, 0.412989 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="." to="." method="_on_people_destroy_area_body_entered"]

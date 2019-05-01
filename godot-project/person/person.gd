@@ -35,5 +35,4 @@ func destroy():
 	queue_free()
 
 func _on_VisibilityEnabler2D_viewport_exited(viewport):
-	print('Viewport')
 	queue_free()

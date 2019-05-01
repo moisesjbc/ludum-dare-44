@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://main/main.gd" type="Script" id=1]
 [ext_resource path="res://main/background.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://change_screen/change_screen.tscn" type="PackedScene" id=6]
 [ext_resource path="res://menus/game_over_menu/game_over_menu.tscn" type="PackedScene" id=7]
 [ext_resource path="res://menus/pause_menu/pause_menu.tscn" type="PackedScene" id=8]
+[ext_resource path="res://people_destroy_area/people_destroy_area.tscn" type="PackedScene" id=9]
 
 [node name="main" type="Node2D"]
 script = ExtResource( 1 )
@@ -51,6 +52,12 @@ size_flags_vertical = 2
 visible = false
 size_flags_horizontal = 2
 size_flags_vertical = 2
+
+[node name="people_destroy_area_left" parent="." instance=ExtResource( 9 )]
+position = Vector2( 5.44037, -8.16217 )
+destroy_people_moving_left = true
+
+[node name="people_destroy_area_right" parent="." instance=ExtResource( 9 )]
 
 [connection signal="currency_change_finished" from="change_machine" to="." method="_on_change_machine_currency_change_finished"]
 [connection signal="currency_change_started" from="change_machine" to="." method="_on_change_machine_currency_change_started"]
